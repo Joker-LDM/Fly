@@ -1,14 +1,16 @@
 package cn.edu.hcnu.ui;
 
+
 import cn.edu.hcnu.bean.Flight;
 import cn.edu.hcnu.bll.IFlightService;
+import cn.edu.hcnu.bll.impl.FlightServericeImpl;
 
 import java.util.Scanner;
 import java.util.UUID;
 
 public class MainUI {
     public static void main(String[] args) {
-        Scanner sc=new Scanner(System.in);  //接受键盘的输入
+        Scanner sc=new Scanner(System.in);  //创建sc对象，接受键盘的输入
         while (true) {
             System.out.println("请输入相应的数字进行操作：");
 
@@ -25,7 +27,7 @@ public class MainUI {
                 String id = UUID.randomUUID().toString();  //生成随机id，作为数据库的主键
 
                 System.out.println("请输入航班编号");
-                String flightId = sc.next();  //调用对象fligthid的方法
+                String flightid = sc.next();  //调用对象fligthid的方法
                 System.out.print("请输入机型：");
                 String planeType = sc.next();
                 System.out.print("请输入座位数：");
@@ -38,9 +40,11 @@ public class MainUI {
                 String departureTime = sc.next();
 
                 //Flight类
-                Flight flight = new Flight(id, flightid, planeType, departureAirPort
-                        , departureTime);
-                IFlightService
+
+                Flight flight = new Flight(id,flightid, planeType, departureAirPort
+                        , departureTime);   //调用Flight中方法
+                IFlightService iFlightService =new FlightServericeImpl();
+                IFlightService.insertFlight(flight);
 
             }
         }

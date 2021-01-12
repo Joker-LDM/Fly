@@ -5,7 +5,7 @@ import java.util.Set;
 
 public interface IFlightService   //创建IFlightService的业务层数据接口
 {
-    void insertFlight(Flight flight);
+    static void insertFlight(Flight flight);
     Set<Flight> getAllFlights();    //？
     Flight getFlightByDepartureTime(String departureTime);
     Flight getDepartureAirPort(String departureAirPort);
