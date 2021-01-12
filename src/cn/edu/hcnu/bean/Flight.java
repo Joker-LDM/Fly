@@ -5,7 +5,15 @@ public class Flight {
         private String departureAirPort;
         private String destinationAirPort;
         private String departureTime;
+        private String updateFlight;
 
+        public String getUpdateFlight() {
+        return updateFlight;
+        }
+
+        public void setUpdateFlight(String updateFlight) {
+             this.updateFlight = updateFlight;
+        }
         public String getId() {
             return id;
         }
