@@ -1,3 +1,7 @@
+package cn.edu.hcnu.bean;
+
+import cn.edu.hcnu.bean.Customer;
+
 public class Order {
         private String id;
         private String customerType;  //乘客的类型
